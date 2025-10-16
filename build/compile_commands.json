@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Main.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Main.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Main.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Main.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Core/Window.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Core/Window.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Core/Window.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Core/Window.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Core/Input.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Core/Input.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Core/Input.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Core/Input.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Utils/FileUtils.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Utils/FileUtils.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Utils/FileUtils.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Utils/FileUtils.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/Renderable.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/Renderable.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/Renderable.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Graphics/Renderable.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/SimpleRenderer.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/SimpleRenderer.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/Renderer.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/Renderer.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o"
+},
+{
+  "directory": "/home/sam/Documents/dev/Neonix/build",
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/Shader.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/Shader.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/Shader.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Graphics/Shader.cpp.o"
+}
+]

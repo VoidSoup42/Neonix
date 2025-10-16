@@ -1,0 +1,3 @@
+/home/sam/Documents/dev/Neonix/build/CMakeFiles/Neonix.dir
+/home/sam/Documents/dev/Neonix/build/CMakeFiles/edit_cache.dir
+/home/sam/Documents/dev/Neonix/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,12 @@
+# ninja log v6
+1	644	1760614553166853231	CMakeFiles/Neonix.dir/Source/Utils/FileUtils.cpp.o	5d4872a0d25f4aae
+1	727	1760614553166661725	CMakeFiles/Neonix.dir/Source/Core/Input.cpp.o	b629a27942cf0a17
+3	765	1760614553168475620	CMakeFiles/Neonix.dir/Source/Graphics/Shader.cpp.o	bf5ecae1225618a3
+1	892	1760614553167019821	CMakeFiles/Neonix.dir/Source/Graphics/Renderable.cpp.o	84cdfacdadcc8a60
+2	543	1760615780215707110	CMakeFiles/Neonix.dir/Source/Core/Window.cpp.o	a5c3066b98b1fd47
+2	1645	1760628602809392880	CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o	f0a85e0425b5bc00
+1	977	1760628729081868644	CMakeFiles/Neonix.dir/Source/Main.cpp.o	b8ff91eeb7173ec7
+977	1070	1760628730056859980	Neonix	1f727956d7409cc8
+1	948	1760628713596388564	CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer.cpp.o	af420a10d7095251
+2	20	1760628825026015986	CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o	f0a85e0425b5bc00
+20	96	1760628825044015826	Neonix	53bbb32ca1fa60f7
