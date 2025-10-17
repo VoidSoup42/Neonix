@@ -1,7 +1,7 @@
 #include "Core/Window.hpp"
 #include "Core/Input.hpp"
 #include "Graphics/Renderable.hpp"
-#include "Graphics/SimpleRenderer.hpp"
+#include "Graphics/SimpleRenderer2D.hpp"
 #include "Graphics/Shader.hpp"
 #include <iostream>
 
@@ -23,19 +23,21 @@ int main()
         2, 3, 0
     };
 
-    SimpleRenderer renderer;
+    SimpleRenderer2D renderer;
 
     Shader shader("../Resources/Shaders/SimpleShader.vert", "../Resources/Shaders/SimpleShader.frag");
 
     Renderable quad(vertices, indices);
 
-    renderer.Submit(quad);
-
+    
     while (!window.ShouldClose())
     {
         window.Clear();
+        
 
+        renderer.Submit(quad);
         renderer.Render(shader);
+        
 
         window.Update();
     }

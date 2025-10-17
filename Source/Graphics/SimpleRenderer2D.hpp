@@ -1,19 +1,20 @@
 #pragma once
+
 #include "Renderable.hpp"
 #include "Shader.hpp"
-#include <vector>
+#include <deque>
 
 namespace Neonix
 {
-    class SimpleRenderer
+    class SimpleRenderer2D
     {
     public:
-        SimpleRenderer() = default;
+        SimpleRenderer2D() = default;
 
         void Submit(Renderable& object);
         void Render(Shader& shader);
     
     private:
-        std::vector<Renderable> m_renderQueue;
+        std::deque<const Renderable*> m_renderQueue;
     };
 }

@@ -1,4 +1,5 @@
 #pragma once
+
 #include <glm/glm.hpp>
 #include <vector>
 
@@ -26,6 +27,6 @@ namespace Neonix
 
         uint32_t m_indicesCount;
 
-        // glm::mat4 m_modelMatrix;s
+        // glm::mat4 m_modelMatrix;
     };
 }

@@ -22,12 +22,13 @@ add_executable(Neonix
     Source/Utils/FileUtils.cpp
     Source/Utils/FileUtils.hpp
 
-    Source/Graphics/Renderable.cpp
-    Source/Graphics/Renderable.hpp
-    Source/Graphics/SimpleRenderer.hpp
-    Source/Graphics/SimpleRenderer.cpp
-    Source/Graphics/Renderer.hpp
-    Source/Graphics/Renderer.cpp
+    Source/Graphics/Renderable2D.cpp
+    Source/Graphics/Renderable2D.hpp
+    Source/Graphics/SimpleRenderer2D.hpp
+    Source/Graphics/SimpleRenderer2D.cpp
+    Source/Graphics/BatchRenderer2D.hpp
+    Source/Graphics/BatchRenderer2D.cpp
+    
     Source/Graphics/Shader.cpp
     Source/Graphics/Shader.hpp
 

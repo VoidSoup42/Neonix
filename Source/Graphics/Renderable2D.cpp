@@ -1,4 +1,4 @@
-#include "Renderable.hpp"
+#include "Renderable2D.hpp"
 #include <GL/glew.h>
 
 namespace Neonix
