@@ -1,7 +1,7 @@
 #pragma once
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <cstdint>
+#include <glm/glm.hpp>
 #include "Input.hpp"
 
 namespace Neonix
@@ -12,6 +12,7 @@ namespace Neonix
         Window(const char* title, uint32_t width, uint32_t height);
         ~Window();
 
+        void ClearColor(glm::vec4 color);
         void Clear();
         void Update();
         bool ShouldClose();

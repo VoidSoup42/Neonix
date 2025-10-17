@@ -25,7 +25,7 @@ namespace Neonix
         }
 
         glfwMakeContextCurrent(m_window);
-        glfwSwapInterval(0);
+        glfwSwapInterval(1);
 
         glfwSetWindowUserPointer(m_window, this);
         glfwSetWindowSizeCallback(m_window, WindowResizeCallBack);
@@ -43,6 +43,11 @@ namespace Neonix
     {
         glfwDestroyWindow(m_window);
         glfwTerminate();
+    }
+
+    void Window::ClearColor(glm::vec4 color)
+    {
+        glClearColor(color.r, color.g, color.b, color.a);
     }
 
     void Window::Clear()

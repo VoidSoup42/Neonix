@@ -1,5 +1,6 @@
 #include "Renderable.hpp"
 #include <GL/glew.h>
+#include <glm/gtc/matrix_transform.hpp>
 
 namespace Neonix
 {
@@ -14,11 +15,15 @@ namespace Neonix
 
         // Position
         glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 3, GL_FLOAT, 0, sizeof(float) * 7, (void*)offsetof(Vertex, position));
+        glVertexAttribPointer(0, 3, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, position));
 
-        // Color
+        // Normals
         glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 4, GL_FLOAT, 0, sizeof(float) * 7, (void*)offsetof(Vertex, color));
+        glVertexAttribPointer(1, 3, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, normals));
+
+        // Tex Coords
+        glEnableVertexAttribArray(2);
+        glVertexAttribPointer(2, 2, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, texCoords));
 
         glGenBuffers(1, &m_indexBuffer);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer);
@@ -32,5 +37,17 @@ namespace Neonix
         glDeleteVertexArrays(1, &m_vertexArray);
         glDeleteBuffers(1, &m_vertexBuffer);
         glDeleteBuffers(1, &m_indexBuffer);
+    }
+
+    void Renderable::Translate(const glm::vec3& pos)
+    {
+        m_modelMatrix = glm::translate(m_modelMatrix, pos);
+    }
+
+    void Renderable::Rotate(const glm::vec3& eulerAngles)
+    {
+        m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.x, glm::vec3(1, 0, 0));
+        m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.y, glm::vec3(0, 1, 0));
+        m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.z, glm::vec3(0, 0, 1));
     }
 }

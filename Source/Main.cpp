@@ -13,27 +13,42 @@ int main()
     using namespace glm;
 
     Window window("Neonix", 1600, 900);
-
-
     
-    mat4 view(1.0f);
+    vec3 cameraPos   = {0.0f, 0.0f, 3.0f};
+    vec3 cameraTarget= {0.0f, 0.0f, 0.0f};
+    vec3 cameraUp    = {0.0f, 1.0f, 0.0f};
+    mat4 view = lookAt(cameraPos, cameraTarget, cameraUp);
 
     Renderer renderer;
 
     Shader shader("../Resources/Shaders/SimpleShader.vert", "../Resources/Shaders/SimpleShader.frag");
 
-    Renderable quad = create_quad();
+    Renderable cube = create_cube();
 
     
     while (!window.ShouldClose())
     {
         window.Clear();
         
-        mat4 proj = ortho(-8.0f, 8.0f, -4.5f, 4.5f, -10.0f, 10.0f);
+        float aspect = window.GetWidth() / (float)window.GetHeight();
+        mat4 proj = perspective((float)radians(80.0), aspect, 0.1f, 100.0f);
+
         shader.SetUniformMat4("u_proj", proj);
         shader.SetUniformMat4("u_view", view);
 
-        renderer.Submit(quad);
+        double mouseX, mouseY;
+        Input::GetMousePosition(mouseX, mouseY);
+
+        if (Input::IsMouseButtonPressed(GLFW_MOUSE_BUTTON_LEFT))
+        {
+            window.ClearColor({0.78, 0.1, 0.1, 1.0});
+        }
+        else
+        {
+            window.ClearColor({0.0, .0, .0, 1});
+        }
+
+        renderer.Submit(cube);
         renderer.Render(shader);
         
 

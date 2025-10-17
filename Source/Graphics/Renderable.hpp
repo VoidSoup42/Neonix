@@ -8,7 +8,8 @@ namespace Neonix
     struct Vertex
     {
         glm::vec3 position;
-        glm::vec4 color;
+        glm::vec3 normals;
+        glm::vec2 texCoords;
     };
 
     class Renderable
@@ -16,6 +17,9 @@ namespace Neonix
     public:
         Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices);
         ~Renderable();
+
+        void Translate(const glm::vec3& pos);
+        void Rotate(const glm::vec3& eulerAngles);
 
         inline uint32_t GetVertexArray() const { return m_vertexArray; }
         inline uint32_t GetIndicesCount() const { return m_indicesCount; }
