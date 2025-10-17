@@ -1,5 +1,6 @@
 #include "Shader.hpp"
 #include "../Utils/FileUtils.hpp"
+#include <glm/gtc/type_ptr.hpp>
 
 namespace Neonix
 {
@@ -70,5 +71,10 @@ namespace Neonix
     void Shader::UnBind() const
     {
         glUseProgram(0);
+    }
+
+    void Shader::SetUniformMat4(const char* name, const glm::mat4& value)
+    {
+        glUniformMatrix4fv(glGetUniformLocation(m_id, name), 1, false, glm::value_ptr(value));
     }
 }

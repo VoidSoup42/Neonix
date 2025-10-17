@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GL/glew.h>
+#include <glm/glm.hpp>
 
 namespace Neonix
 {
@@ -13,6 +14,7 @@ namespace Neonix
         void Bind() const;
         void UnBind() const;
 
+        void SetUniformMat4(const char* name, const glm::mat4& value);
         inline uint32_t GetId() const { return m_id; }
 
     private:

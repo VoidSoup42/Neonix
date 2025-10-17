@@ -6,12 +6,12 @@
 
 namespace Neonix
 {
-    class SimpleRenderer2D
+    class Renderer
     {
     public:
-        SimpleRenderer2D() = default;
+        Renderer() = default;
 
-        void Submit(Renderable& object);
+        void Submit(const Renderable& object);
         void Render(Shader& shader);
     
     private:

@@ -31,15 +31,9 @@
 },
 {
   "directory": "/home/sam/Documents/dev/Neonix/build",
-  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer2D.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/SimpleRenderer2D.cpp",
-  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/SimpleRenderer2D.cpp",
-  "output": "CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer2D.cpp.o"
-},
-{
-  "directory": "/home/sam/Documents/dev/Neonix/build",
-  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/BatchRenderer2D.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/BatchRenderer2D.cpp",
-  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/BatchRenderer2D.cpp",
-  "output": "CMakeFiles/Neonix.dir/Source/Graphics/BatchRenderer2D.cpp.o"
+  "command": "/usr/bin/clang++ -g -std=gnu++20 -o CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o -c /home/sam/Documents/dev/Neonix/Source/Graphics/Renderer.cpp",
+  "file": "/home/sam/Documents/dev/Neonix/Source/Graphics/Renderer.cpp",
+  "output": "CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o"
 },
 {
   "directory": "/home/sam/Documents/dev/Neonix/build",

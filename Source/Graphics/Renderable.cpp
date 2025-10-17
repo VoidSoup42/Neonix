@@ -1,9 +1,9 @@
-#include "Renderable2D.hpp"
+#include "Renderable.hpp"
 #include <GL/glew.h>
 
 namespace Neonix
 {
-    Renderable::Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices) : m_indicesCount(indices.size())
+    Renderable::Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices) : m_indicesCount(indices.size()), m_modelMatrix(1.0f)
     {
         glGenVertexArrays(1, &m_vertexArray);
         glBindVertexArray(m_vertexArray);

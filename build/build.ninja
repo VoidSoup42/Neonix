@@ -79,14 +79,8 @@ build CMakeFiles/Neonix.dir/Source/Graphics/Renderable.cpp.o: CXX_COMPILER__Neon
   OBJECT_DIR = CMakeFiles/Neonix.dir
   OBJECT_FILE_DIR = CMakeFiles/Neonix.dir/Source/Graphics
 
-build CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer2D.cpp.o: CXX_COMPILER__Neonix_unscanned_Debug /home/sam/Documents/dev/Neonix/Source/Graphics/SimpleRenderer2D.cpp || cmake_object_order_depends_target_Neonix
-  DEP_FILE = CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer2D.cpp.o.d
-  FLAGS = -g -std=gnu++20
-  OBJECT_DIR = CMakeFiles/Neonix.dir
-  OBJECT_FILE_DIR = CMakeFiles/Neonix.dir/Source/Graphics
-
-build CMakeFiles/Neonix.dir/Source/Graphics/BatchRenderer2D.cpp.o: CXX_COMPILER__Neonix_unscanned_Debug /home/sam/Documents/dev/Neonix/Source/Graphics/BatchRenderer2D.cpp || cmake_object_order_depends_target_Neonix
-  DEP_FILE = CMakeFiles/Neonix.dir/Source/Graphics/BatchRenderer2D.cpp.o.d
+build CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o: CXX_COMPILER__Neonix_unscanned_Debug /home/sam/Documents/dev/Neonix/Source/Graphics/Renderer.cpp || cmake_object_order_depends_target_Neonix
+  DEP_FILE = CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o.d
   FLAGS = -g -std=gnu++20
   OBJECT_DIR = CMakeFiles/Neonix.dir
   OBJECT_FILE_DIR = CMakeFiles/Neonix.dir/Source/Graphics
@@ -105,7 +99,7 @@ build CMakeFiles/Neonix.dir/Source/Graphics/Shader.cpp.o: CXX_COMPILER__Neonix_u
 #############################################
 # Link the executable Neonix
 
-build Neonix: CXX_EXECUTABLE_LINKER__Neonix_Debug CMakeFiles/Neonix.dir/Source/Main.cpp.o CMakeFiles/Neonix.dir/Source/Core/Window.cpp.o CMakeFiles/Neonix.dir/Source/Core/Input.cpp.o CMakeFiles/Neonix.dir/Source/Utils/FileUtils.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/Renderable.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/SimpleRenderer2D.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/BatchRenderer2D.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/Shader.cpp.o | /usr/lib64/libglfw.so.3.4 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so
+build Neonix: CXX_EXECUTABLE_LINKER__Neonix_Debug CMakeFiles/Neonix.dir/Source/Main.cpp.o CMakeFiles/Neonix.dir/Source/Core/Window.cpp.o CMakeFiles/Neonix.dir/Source/Core/Input.cpp.o CMakeFiles/Neonix.dir/Source/Utils/FileUtils.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/Renderable.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/Renderer.cpp.o CMakeFiles/Neonix.dir/Source/Graphics/Shader.cpp.o | /usr/lib64/libglfw.so.3.4 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so
   DEP_FILE = CMakeFiles/Neonix.dir/link.d
   FLAGS = -g
   LINK_FLAGS = -Xlinker --dependency-file=CMakeFiles/Neonix.dir/link.d
