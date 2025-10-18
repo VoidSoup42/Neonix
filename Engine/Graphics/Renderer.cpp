@@ -9,9 +9,11 @@ namespace Neonix
         m_renderQueue.push_back(&object);
     }
     
-    void Renderer::Render(Shader& shader)
+    void Renderer::Render(Shader& shader, Camera& camera)
     {
         shader.Bind();
+        shader.SetUniformMat4("u_proj", camera.GetProj());
+        shader.SetUniformMat4("u_view", camera.GetView());
 
         while (!m_renderQueue.empty())
         {

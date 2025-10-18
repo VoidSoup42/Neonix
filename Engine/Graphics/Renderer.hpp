@@ -2,6 +2,7 @@
 
 #include "Renderable.hpp"
 #include "Shader.hpp"
+#include "Camera.hpp"
 #include <deque>
 
 namespace Neonix
@@ -12,7 +13,7 @@ namespace Neonix
         Renderer() = default;
 
         void Submit(const Renderable& object);
-        void Render(Shader& shader);
+        void Render(Shader& shader, Camera& camera);
     
     private:
         std::deque<const Renderable*> m_renderQueue;
