@@ -21,7 +21,9 @@ namespace Neonix
         Application(const ApplicationProps& props);
         ~Application();
 
-        // requires(std::is_base_of<Layer, TLayer>)
+        static Application* GetInstance();
+        inline std::shared_ptr<Window> GetWindow() const { return m_window; }
+
         template<typename TLayer>
         void PushLayer()
         {
@@ -33,5 +35,6 @@ namespace Neonix
     private:
         std::shared_ptr<Window> m_window;
         std::vector<std::unique_ptr<Layer>> m_layerStack;
+        static Application* s_instance;
     };
 }
