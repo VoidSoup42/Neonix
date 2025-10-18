@@ -13,23 +13,27 @@ include_directories(
 )
 
 add_executable(Neonix
-    Source/Main.cpp
-    Source/Core/Window.cpp
-    Source/Core/Window.hpp
-    Source/Core/Input.cpp
-    Source/Core/Input.hpp
-    
-    Source/Utils/FileUtils.cpp
-    Source/Utils/FileUtils.hpp
+    Engine/Main.cpp
+    Engine/TestLayer.hpp
 
-    Source/Graphics/Renderable.cpp
-    Source/Graphics/Renderable.hpp
-    Source/Graphics/Renderer.hpp
-    Source/Graphics/Renderer.cpp
-    Source/Graphics/Shapes.hpp
+    Engine/Core/Application.cpp
+    Engine/Core/Application.hpp
+    Engine/Core/Window.cpp
+    Engine/Core/Window.hpp
+    Engine/Core/Input.cpp
+    Engine/Core/Input.hpp    
+
+    Engine/Utils/FileUtils.cpp
+    Engine/Utils/FileUtils.hpp
     
-    Source/Graphics/Shader.cpp
-    Source/Graphics/Shader.hpp
+    Engine/Graphics/Renderable.cpp
+    Engine/Graphics/Renderable.hpp
+    Engine/Graphics/Renderer.hpp
+    Engine/Graphics/Renderer.cpp
+    Engine/Graphics/Shapes.hpp
+    Engine/Graphics/Layer.hpp
+    Engine/Graphics/Shader.cpp
+    Engine/Graphics/Shader.hpp
 
 )
 

@@ -4,7 +4,7 @@
 
 namespace Neonix
 {
-    Window::Window(const char *title, uint32_t width, uint32_t height) : m_title(title), m_width(width), m_height(height)
+    Window::Window(const char *title, uint32_t width, uint32_t height, bool vSync) : m_title(title), m_width(width), m_height(height)
     {
         if (!glfwInit())
         {
@@ -25,7 +25,7 @@ namespace Neonix
         }
 
         glfwMakeContextCurrent(m_window);
-        glfwSwapInterval(1);
+        glfwSwapInterval(vSync ? 1 : 0);
 
         glfwSetWindowUserPointer(m_window, this);
         glfwSetWindowSizeCallback(m_window, WindowResizeCallBack);

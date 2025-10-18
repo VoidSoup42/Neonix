@@ -9,7 +9,7 @@ namespace Neonix
     class Window
     {
     public:
-        Window(const char* title, uint32_t width, uint32_t height);
+        Window(const char* title, uint32_t width, uint32_t height, bool vSync);
         ~Window();
 
         void ClearColor(glm::vec4 color);
