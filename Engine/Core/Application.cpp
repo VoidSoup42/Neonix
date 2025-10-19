@@ -2,7 +2,6 @@
 
 namespace Neonix
 {
-    // Define the static instance storage
     Application* Application::s_instance = nullptr;
 
     Application::Application(const ApplicationProps& props)
@@ -13,7 +12,6 @@ namespace Neonix
 
     Application::~Application()
     {
-        // Clear the static instance pointer. Do not delete s_instance; it points to this object.
         s_instance = nullptr;
     }
 

@@ -4,7 +4,7 @@
 
 namespace Neonix
 {
-        // Quad (XY plane) - z = 0
+    // Quad (XY plane) - z = 0
     inline std::vector<Vertex> quad_vertices = {
         {{-0.5f, -0.5f,  0.0f}, {0.0f, 0.0f, 1.0f}, {0.0f, 0.0f}}, // Bottom Left
         {{ 0.5f, -0.5f,  0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 0.0f}}, // Bottom Right

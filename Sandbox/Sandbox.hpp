@@ -1,11 +1,6 @@
 #pragma once
 
-#include "Graphics/Renderable.hpp"
-#include "Graphics/Renderer.hpp"
-#include "Graphics/Shapes.hpp"
-#include "Graphics/Layer.hpp"
-#include "Graphics/Camera.hpp"
-#include "Core/Application.hpp"
+#include <Neonix.hpp>
 
 class Sandbox : public Neonix::Layer
 {

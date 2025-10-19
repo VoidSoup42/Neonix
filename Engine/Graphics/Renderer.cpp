@@ -20,6 +20,7 @@ namespace Neonix
             const Renderable* obj = m_renderQueue.front();
             
             shader.SetUniformMat4("u_model", obj->GetModelMatrix());
+            obj->GetMaterial().Bind(shader);
             glBindVertexArray(obj->GetVertexArray());
             glDrawElements(GL_TRIANGLES, obj->GetIndicesCount(), GL_UNSIGNED_SHORT, nullptr);            
 

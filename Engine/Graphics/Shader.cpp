@@ -77,4 +77,9 @@ namespace Neonix
     {
         glUniformMatrix4fv(glGetUniformLocation(m_id, name), 1, false, glm::value_ptr(value));
     }
+
+    void Shader::SetUniformInt(const char* name, int value)
+    {
+        glUniform1i(glGetUniformLocation(m_id, name), value);
+    }
 }

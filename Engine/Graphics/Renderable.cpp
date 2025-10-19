@@ -4,7 +4,9 @@
 
 namespace Neonix
 {
-    Renderable::Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices) : m_indicesCount(indices.size()), m_modelMatrix(1.0f)
+    Renderable::Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
+        : m_indicesCount(indices.size()),
+          m_modelMatrix(1.0f)
     {
         glGenVertexArrays(1, &m_vertexArray);
         glBindVertexArray(m_vertexArray);
@@ -49,5 +51,10 @@ namespace Neonix
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.x, glm::vec3(1, 0, 0));
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.y, glm::vec3(0, 1, 0));
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.z, glm::vec3(0, 0, 1));
+    }
+
+    void Renderable::SetMaterial(const Material& material)
+    {
+        m_material = std::make_unique<Material>(material);
     }
 }

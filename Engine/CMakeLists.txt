@@ -6,7 +6,6 @@ add_library(Neonix SHARED
     Core/Input.cpp
     Core/Input.hpp    
 
-    Utils/FileUtils.cpp
     Utils/FileUtils.hpp
     
     Graphics/Renderable.cpp
@@ -17,8 +16,18 @@ add_library(Neonix SHARED
     Graphics/Layer.hpp
     Graphics/Shader.cpp
     Graphics/Shader.hpp
+    Graphics/Material.hpp
+    Graphics/Texture.hpp
+    Graphics/Texture.cpp
     Graphics/Camera.cpp
     Graphics/Camera.hpp
+
+    # stb
+    ${CMAKE_SOURCE_DIR}/Vendor/stb/stb_image_loader.cpp
+)
+
+include_directories(
+    ${CMAKE_SOURCE_DIR}/Vendor/stb
 )
 
 target_link_libraries(Neonix PUBLIC glfw GLEW OpenGL)
