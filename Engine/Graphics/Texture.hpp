@@ -13,7 +13,7 @@ namespace Neonix
 
         void Bind(uint32_t solt) const;
         void Unbind() const;
-        void SetUnifrom(uint32_t slot, Shader& shader, const char* uniformName) const;
+        void SetUnifrom(uint32_t slot, const Shader& shader, const char* uniformName) const;
 
     private:
         uint32_t m_id = 0;

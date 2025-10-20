@@ -13,11 +13,11 @@ namespace Neonix
         glm::vec2 texCoords;
     };
 
-    class Renderable
+    class Mesh
     {
     public:
-        Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices);
-        ~Renderable();
+        Mesh(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices);
+        ~Mesh();
 
         void SetMaterial(const Material& material);
 

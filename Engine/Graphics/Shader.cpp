@@ -73,12 +73,12 @@ namespace Neonix
         glUseProgram(0);
     }
 
-    void Shader::SetUniformMat4(const char* name, const glm::mat4& value)
+    void Shader::SetUniformMat4(const char* name, const glm::mat4& value) const
     {
         glUniformMatrix4fv(glGetUniformLocation(m_id, name), 1, false, glm::value_ptr(value));
     }
 
-    void Shader::SetUniformInt(const char* name, int value)
+    void Shader::SetUniformInt(const char* name, int value) const
     {
         glUniform1i(glGetUniformLocation(m_id, name), value);
     }

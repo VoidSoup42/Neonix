@@ -36,7 +36,7 @@ namespace Neonix
         glBindTexture(GL_TEXTURE_2D, 0);
     }
 
-    void Texture::SetUnifrom(uint32_t slot, Shader& shader, const char* uniformName) const
+    void Texture::SetUnifrom(uint32_t slot, const Shader& shader, const char* uniformName) const
     {
         shader.SetUniformInt(uniformName, slot);
     }

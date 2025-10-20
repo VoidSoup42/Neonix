@@ -1,4 +1,4 @@
-#include "Core/Application.hpp"
+#include <Neonix.hpp>
 #include "Sandbox.hpp"
 
 int main()

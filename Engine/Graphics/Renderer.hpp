@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Renderable.hpp"
+#include "Mesh.hpp"
 #include "Shader.hpp"
 #include "Camera.hpp"
 #include <deque>
@@ -12,10 +12,10 @@ namespace Neonix
     public:
         Renderer() = default;
 
-        void Submit(const Renderable& object);
-        void Render(Shader& shader, Camera& camera);
+        void Submit(const Mesh& object);
+        void Render(Camera& camera);
     
     private:
-        std::deque<const Renderable*> m_renderQueue;
+        std::deque<const Mesh*> m_renderQueue;
     };
 }

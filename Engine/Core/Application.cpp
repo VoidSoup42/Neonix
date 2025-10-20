@@ -22,13 +22,19 @@ namespace Neonix
 
     void Application::Run()
     {
+        float deltaTime = 0.0f; // Time between current frame and last frame
+        float lastFrame = 0.0f; // Time of last frame
         while (!m_window->ShouldClose())
         {
+            float currentFrame = glfwGetTime(); // Get current time in seconds
+            deltaTime = currentFrame - lastFrame;
+            lastFrame = currentFrame;
+            
             m_window->Clear();
 
             for (const std::unique_ptr<Layer>& layer : m_layerStack)
             {
-                layer->OnUpdate();
+                layer->OnUpdate(deltaTime);
             }
 
             m_window->Update();

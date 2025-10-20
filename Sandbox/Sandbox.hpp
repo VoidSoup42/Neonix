@@ -6,14 +6,11 @@ class Sandbox : public Neonix::Layer
 {
 public:
     Sandbox();
-    ~Sandbox() override;
-
-    void OnUpdate() override;
+    void OnUpdate(float& deltaTime) override;
 
 private:
     Neonix::Application* m_appInstance;
     Neonix::Renderer m_renderer;
-    Neonix::Renderable m_cube;
-    Neonix::Shader m_shader;
+    Neonix::Mesh m_cube;
     Neonix::Camera m_camera;
 };

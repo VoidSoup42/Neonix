@@ -33,6 +33,8 @@ namespace Neonix
 
         glewInit();
 
+        std::cout << "Vendor: " << glGetString(GL_VENDOR) << std::endl;
+        std::cout << "Renderer: " << glGetString(GL_RENDERER) << std::endl;
         std::cout << "OpenGL Version: " << glGetString(GL_VERSION) << std::endl;
 
         glViewport(0, 0, m_width, m_height);

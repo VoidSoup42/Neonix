@@ -6,6 +6,6 @@ namespace Neonix
     {
     public:
         virtual ~Layer() {};
-        virtual void OnUpdate() {};
+        virtual void OnUpdate(float& deltaTime) {};
     };
 }

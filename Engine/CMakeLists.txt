@@ -7,9 +7,9 @@ add_library(Neonix SHARED
     Core/Input.hpp    
 
     Utils/FileUtils.hpp
-    
-    Graphics/Renderable.cpp
-    Graphics/Renderable.hpp
+
+        Graphics/Mesh.cpp
+        Graphics/Mesh.hpp
     Graphics/Renderer.hpp
     Graphics/Renderer.cpp
     Graphics/Shapes.hpp
@@ -17,6 +17,7 @@ add_library(Neonix SHARED
     Graphics/Shader.cpp
     Graphics/Shader.hpp
     Graphics/Material.hpp
+    Graphics/Material.cpp
     Graphics/Texture.hpp
     Graphics/Texture.cpp
     Graphics/Camera.cpp

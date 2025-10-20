@@ -1,10 +1,10 @@
-#include "Renderable.hpp"
+#include "Mesh.hpp"
 #include <GL/glew.h>
 #include <glm/gtc/matrix_transform.hpp>
 
 namespace Neonix
 {
-    Renderable::Renderable(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
+    Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
         : m_indicesCount(indices.size()),
           m_modelMatrix(1.0f)
     {
@@ -34,27 +34,28 @@ namespace Neonix
         glBindVertexArray(0);
     }
 
-    Renderable::~Renderable()
+    Mesh::~Mesh()
     {
         glDeleteVertexArrays(1, &m_vertexArray);
         glDeleteBuffers(1, &m_vertexBuffer);
         glDeleteBuffers(1, &m_indexBuffer);
     }
 
-    void Renderable::Translate(const glm::vec3& pos)
+    void Mesh::Translate(const glm::vec3& pos)
     {
         m_modelMatrix = glm::translate(m_modelMatrix, pos);
     }
 
-    void Renderable::Rotate(const glm::vec3& eulerAngles)
+    void Mesh::Rotate(const glm::vec3& eulerAngles)
     {
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.x, glm::vec3(1, 0, 0));
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.y, glm::vec3(0, 1, 0));
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.z, glm::vec3(0, 0, 1));
     }
 
-    void Renderable::SetMaterial(const Material& material)
+    void Mesh::SetMaterial(const Material& material)
     {
-        m_material = std::make_unique<Material>(material);
+        m_material = std::make_unique<Material>();
+        m_material->albedo = material.albedo;
     }
 }

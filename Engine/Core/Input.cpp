@@ -39,9 +39,6 @@ namespace Neonix
     {
         if (key >= 0 && key < MAX_KEYS)
             s_keys[key] = (action != GLFW_RELEASE);
-
-        if (action == GLFW_PRESS)
-            std::cout << "Key Pressed: " << key << std::endl;
     }
 
     void Input::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)

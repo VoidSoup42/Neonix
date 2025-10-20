@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Renderable.hpp"
+#include "Mesh.hpp"
 
 namespace Neonix
 {
@@ -17,9 +17,9 @@ namespace Neonix
         2, 3, 0
     };
 
-    inline Renderable create_quad()
+    inline Mesh create_quad()
     {
-        return Renderable(quad_vertices, quad_indices);
+        return Mesh(quad_vertices, quad_indices);
     }
 
     // Cube vertices and indices
@@ -70,8 +70,8 @@ namespace Neonix
        20,21,22,22,23,20          // Bottom
     };
 
-    inline Renderable create_cube()
+    inline Mesh create_cube()
     {
-        return Renderable(cube_vertices, cube_indices);
+        return Mesh(cube_vertices, cube_indices);
     }
 }
