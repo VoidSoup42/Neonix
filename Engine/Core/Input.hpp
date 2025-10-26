@@ -15,6 +15,7 @@ namespace Neonix
         static bool IsKeyPressed(uint32_t keycode);
         static bool IsMouseButtonPressed(uint32_t button);
         static void GetMousePosition(double& x, double& y);
+        static void SetCursorMode(bool enabled);
 
         static void KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
         static void MouseButtonCallback(GLFWwindow* window, int button, int action, int mods);
@@ -25,5 +26,6 @@ namespace Neonix
         static bool s_mouseButtons[MAX_BUTTONS];
         static double s_mouseX;
         static double s_mouseY;
+        static GLFWwindow* s_window;
     };
 }

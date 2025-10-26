@@ -2,6 +2,8 @@ add_executable(Sandbox
     Main.cpp
     Sandbox.hpp
     Sandbox.cpp
+    CameraController.hpp
+    CameraController.cpp
 )
 
 target_include_directories(Sandbox PRIVATE ${CMAKE_SOURCE_DIR}/Engine)

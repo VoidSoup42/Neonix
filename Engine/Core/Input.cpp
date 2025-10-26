@@ -7,9 +7,11 @@ namespace Neonix
     bool Input::s_mouseButtons[MAX_BUTTONS] = { false };
     double Input::s_mouseX = 0.0;
     double Input::s_mouseY = 0.0;
+    GLFWwindow* Input::s_window = nullptr;
 
     void Input::Init(GLFWwindow* window)
     {
+        s_window = window;
         glfwSetKeyCallback(window, KeyCallback);
         glfwSetMouseButtonCallback(window, MouseButtonCallback);
         glfwSetCursorPosCallback(window, CursorPositionCallback);
@@ -44,12 +46,33 @@ namespace Neonix
     void Input::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods)
     {
         if (button >= 0 && button < MAX_BUTTONS)
+        {
             s_mouseButtons[button] = (action != GLFW_RELEASE);
+            
+            if (button == GLFW_MOUSE_BUTTON_RIGHT)
+            {
+                SetCursorMode(action != GLFW_RELEASE);
+            }
+        }
     }
 
     void Input::CursorPositionCallback(GLFWwindow* window, double xpos, double ypos)
     {
         s_mouseX = xpos;
         s_mouseY = ypos;
+    }
+
+    void Input::SetCursorMode(bool enabled)
+    {
+        if (!s_window) return;
+        
+        if (enabled)
+        {
+            glfwSetInputMode(s_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+        }
+        else
+        {
+            glfwSetInputMode(s_window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+        }
     }
 }

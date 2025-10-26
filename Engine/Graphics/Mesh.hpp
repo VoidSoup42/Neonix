@@ -9,8 +9,8 @@ namespace Neonix
     struct Vertex
     {
         glm::vec3 position;
-        glm::vec3 normals;
-        glm::vec2 texCoords;
+        glm::vec3 normal;
+        glm::vec2 texCoord;
     };
 
     class Mesh

@@ -21,11 +21,11 @@ namespace Neonix
 
         // Normals
         glEnableVertexAttribArray(1);
-        glVertexAttribPointer(1, 3, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, normals));
+        glVertexAttribPointer(1, 3, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, normal));
 
         // Tex Coords
         glEnableVertexAttribArray(2);
-        glVertexAttribPointer(2, 2, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, texCoords));
+        glVertexAttribPointer(2, 2, GL_FLOAT, 0, sizeof(float) * 8, (void*)offsetof(Vertex, texCoord));
 
         glGenBuffers(1, &m_indexBuffer);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer);
