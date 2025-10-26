@@ -16,8 +16,14 @@ namespace Neonix
         m_shader.SetUniformFloat("u_uvScaleY", uvScaleY);
         if (albedo)
         {
+            m_shader.SetUniformInt("u_useAlbedo", 1);
             albedo->Bind(0);
-            albedo->SetUnifrom(0, m_shader,"u_albedo");
+            albedo->SetUniform(0, m_shader, "u_albedo");
+        }
+        else
+        {
+            m_shader.SetUniformInt("u_useAlbedo", 0);
+            m_shader.SetUniformVec4("u_diffuseColor", diffuseColor);
         }
     }
 }

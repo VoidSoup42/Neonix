@@ -11,6 +11,7 @@ namespace Neonix
     public:
         Material();
         std::shared_ptr<Texture> albedo;
+        glm::vec4 diffuseColor;
         float uvScaleX = 1.0f;
         float uvScaleY = 1.0f;
         

@@ -14,7 +14,10 @@ Sandbox::Sandbox()
     m_plane.SetMaterial(planeMaterial);
 
     m_sphere.Translate({0.0f, 1.0f, 0.0f});
-    m_sphere.SetMaterial(planeMaterial);
+
+    Neonix::Material sphereMaterial;
+    sphereMaterial.diffuseColor = {0.2f, 0.4f, 0.6f, 1.0f};
+    m_sphere.SetMaterial(sphereMaterial);
 
 }
 

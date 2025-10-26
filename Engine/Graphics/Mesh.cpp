@@ -57,5 +57,8 @@ namespace Neonix
     {
         m_material = std::make_unique<Material>();
         m_material->albedo = material.albedo;
+        m_material->diffuseColor = material.diffuseColor;
+        m_material->uvScaleX = material.uvScaleX;
+        m_material->uvScaleY = material.uvScaleY;
     }
 }

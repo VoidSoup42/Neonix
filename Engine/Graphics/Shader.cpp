@@ -87,4 +87,9 @@ namespace Neonix
     {
         glUniform1f(glGetUniformLocation(m_id, name), value);
     }
+
+    void Shader::SetUniformVec4(const char* name, const glm::vec4& value) const
+    {
+        glUniform4fv(glGetUniformLocation(m_id, name), 1, glm::value_ptr(value));
+    }
 }
