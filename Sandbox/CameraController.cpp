@@ -1,11 +1,10 @@
 #include "CameraController.hpp"
 
 CameraController::CameraController(Neonix::Camera* camera, float moveSpeed, float sensitivity)
-    : m_camera(camera), m_moveSpeed(moveSpeed), m_sensitivity(sensitivity)
+    : m_camera(camera), m_moveSpeed(moveSpeed), m_sensitivity(sensitivity),
+      m_position(0.0f, 0.0f, 3.0f), m_rotation(0.0f, 270.0f), m_velocity(0.0f),
+      m_firstMouse(true), m_lastX(0.0), m_lastY(0.0), m_smoothTime(0.1f)
 {
-    m_position = glm::vec3(0.0f, 0.0f, 3.0f);
-    m_rotation = glm::vec2(0.0f, 270.0f); // pitch, yaw
-    m_firstMouse = true;
     UpdateCamera();
 }
 
@@ -53,16 +52,27 @@ void CameraController::Update(float deltaTime)
     glm::vec3 up = glm::normalize(glm::cross(right, forward));
 
     // Handle keyboard input
-    glm::vec3 moveDir(0.0f);
-    if (Neonix::Input::IsKeyPressed(GLFW_KEY_W))    moveDir += forward;
-    if (Neonix::Input::IsKeyPressed(GLFW_KEY_S))    moveDir -= forward;
-    if (Neonix::Input::IsKeyPressed(GLFW_KEY_D))    moveDir += right;
-    if (Neonix::Input::IsKeyPressed(GLFW_KEY_A))    moveDir -= right;
-    if (Neonix::Input::IsKeyPressed(GLFW_KEY_E))    moveDir += up;
-    if (Neonix::Input::IsKeyPressed(GLFW_KEY_Q))    moveDir -= up;
+    glm::vec3 direction(0.0f);
+    if (Neonix::Input::IsKeyPressed(GLFW_KEY_W))    direction += forward;
+    if (Neonix::Input::IsKeyPressed(GLFW_KEY_S))    direction -= forward;
+    if (Neonix::Input::IsKeyPressed(GLFW_KEY_D))    direction += right;
+    if (Neonix::Input::IsKeyPressed(GLFW_KEY_A))    direction -= right;
+    if (Neonix::Input::IsKeyPressed(GLFW_KEY_E))    direction += up;
+    if (Neonix::Input::IsKeyPressed(GLFW_KEY_Q))    direction -= up;
 
-    if (glm::length(moveDir) > 0.0f)
-        m_position += glm::normalize(moveDir) * m_moveSpeed * deltaTime;
+    // Apply smooth movement
+    if (glm::length(direction) > 0.0f)
+    {
+        direction = glm::normalize(direction);
+        glm::vec3 targetVelocity = direction * m_moveSpeed;
+        m_velocity = glm::mix(m_velocity, targetVelocity, 1.0f - std::exp(-deltaTime / m_smoothTime));
+    }
+    else
+    {
+        m_velocity = glm::mix(m_velocity, glm::vec3(0.0f), 1.0f - std::exp(-deltaTime / m_smoothTime));
+    }
+
+    m_position += m_velocity * deltaTime;
 
     UpdateCamera();
 }
