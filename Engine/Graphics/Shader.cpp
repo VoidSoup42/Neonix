@@ -82,4 +82,9 @@ namespace Neonix
     {
         glUniform1i(glGetUniformLocation(m_id, name), value);
     }
+
+    void Shader::SetUniformFloat(const char* name, float value) const
+    {
+        glUniform1f(glGetUniformLocation(m_id, name), value);
+    }
 }

@@ -3,7 +3,6 @@
 #include "../Engine/Graphics/Camera.hpp"
 #include "../Engine/Core/Input.hpp"
 #include <glm/glm.hpp>
-#include <cmath>
 
 class CameraController
 {

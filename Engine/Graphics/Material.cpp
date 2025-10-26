@@ -12,6 +12,8 @@ namespace Neonix
     void Material::Bind() const
     {
         m_shader.Bind();
+        m_shader.SetUniformFloat("u_uvScaleX", uvScaleX);
+        m_shader.SetUniformFloat("u_uvScaleY", uvScaleY);
         if (albedo)
         {
             albedo->Bind(0);

@@ -16,6 +16,7 @@ namespace Neonix
 
         void SetUniformMat4(const char* name, const glm::mat4& value) const;
         void SetUniformInt(const char* name, int value) const;
+        void SetUniformFloat(const char* name, float value) const;
         inline uint32_t GetId() const { return m_id; }
 
     private:

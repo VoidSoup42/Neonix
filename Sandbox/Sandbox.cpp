@@ -1,7 +1,7 @@
 #include "Sandbox.hpp"
 
 Sandbox::Sandbox()
-    : m_cube(Neonix::create_cube()),
+    : m_cube(Neonix::create_plane(100.0f, 100.0f)),
       m_camera(80.0f, (float)16/9, 0.1f, 100.0f),
       m_cameraController(&m_camera)
 {

@@ -44,9 +44,9 @@ void CameraController::Update(float deltaTime)
 
     // Calculate movement direction
     glm::vec3 forward(
-        cos(glm::radians(m_rotation.y)) * cos(glm::radians(m_rotation.x)),
-        sin(glm::radians(m_rotation.x)),
-        sin(glm::radians(m_rotation.y)) * cos(glm::radians(m_rotation.x))
+        glm::cos(glm::radians(m_rotation.y)) * glm::cos(glm::radians(m_rotation.x)),
+        glm::sin(glm::radians(m_rotation.x)),
+        glm::sin(glm::radians(m_rotation.y)) * glm::cos(glm::radians(m_rotation.x))
     );
     glm::vec3 right = glm::normalize(glm::cross(forward, glm::vec3(0.0f, 1.0f, 0.0f)));
     glm::vec3 up = glm::normalize(glm::cross(right, forward));
@@ -80,9 +80,9 @@ void CameraController::Update(float deltaTime)
 void CameraController::UpdateCamera()
 {
     glm::vec3 forward(
-        cos(glm::radians(m_rotation.y)) * cos(glm::radians(m_rotation.x)),
-        sin(glm::radians(m_rotation.x)),
-        sin(glm::radians(m_rotation.y)) * cos(glm::radians(m_rotation.x))
+        glm::cos(glm::radians(m_rotation.y)) * glm::cos(glm::radians(m_rotation.x)),
+        glm::sin(glm::radians(m_rotation.x)),
+        glm::sin(glm::radians(m_rotation.y)) * glm::cos(glm::radians(m_rotation.x))
     );
 
     m_camera->viewMatrix = glm::lookAt(m_position, m_position + forward, glm::vec3(0.0f, 1.0f, 0.0f));
