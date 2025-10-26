@@ -15,8 +15,14 @@ namespace Neonix
         {
             const Mesh* obj = m_renderQueue.front();
 
+            if (!obj->HasMaterial())
+            {
+                std::cerr << "Mesh has no material assigned! Skipping render.\n";
+                m_renderQueue.pop_front();
+                continue;
+            }
+            
             obj->GetMaterial().Bind();
-
             Shader& shader = obj->GetMaterial().GetShader();
             shader.Bind();
             shader.SetUniformMat4("u_proj", camera.GetProj());

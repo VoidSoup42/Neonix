@@ -20,6 +20,7 @@ namespace Neonix
         ~Mesh();
 
         void SetMaterial(const Material& material);
+        inline bool HasMaterial() const { return m_hasMaterial; }
 
         void Translate(const glm::vec3& pos);
         void Rotate(const glm::vec3& eulerAngles);
@@ -37,5 +38,6 @@ namespace Neonix
         
         glm::mat4 m_modelMatrix;
         std::unique_ptr<Material> m_material;
+        bool m_hasMaterial = false;
     };
 }

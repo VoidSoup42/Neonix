@@ -55,6 +55,7 @@ namespace Neonix
 
     void Mesh::SetMaterial(const Material& material)
     {
+        m_hasMaterial = true;
         m_material = std::make_unique<Material>();
         m_material->albedo = material.albedo;
         m_material->diffuseColor = material.diffuseColor;

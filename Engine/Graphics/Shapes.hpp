@@ -4,63 +4,6 @@
 
 namespace Neonix
 {
-    // Quad (XY plane) - z = 0
-    inline std::vector<Vertex> quad_vertices = {
-        {{-0.5f, -0.5f,  0.0f}, {0.0f, 0.0f, 1.0f}, {0.0f, 0.0f}}, // Bottom Left
-        {{ 0.5f, -0.5f,  0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 0.0f}}, // Bottom Right
-        {{ 0.5f,  0.5f,  0.0f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}}, // Top Right
-        {{-0.5f,  0.5f,  0.0f}, {0.0f, 0.0f, 1.0f}, {0.0f, 1.0f}}  // Top Left
-    };
-
-    inline std::vector<unsigned short> quad_indices = {
-        0, 1, 2,
-        2, 3, 0
-    };
-
-    inline Mesh create_quad()
-    {
-        return Mesh(quad_vertices, quad_indices);
-    }
-
-    // Cube vertices and indices
-    inline std::vector<Vertex> cube_vertices = {
-        // Front face (+Z)
-        {{-0.5f, -0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}, {0.0f, 0.0f}},
-        {{ 0.5f, -0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}, {1.0f, 0.0f}},
-        {{ 0.5f,  0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
-        {{-0.5f,  0.5f,  0.5f}, {0.0f, 0.0f, 1.0f}, {0.0f, 1.0f}},
-
-        // Back face (-Z)
-        {{ 0.5f, -0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}, {0.0f, 0.0f}},
-        {{-0.5f, -0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}, {1.0f, 0.0f}},
-        {{-0.5f,  0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}, {1.0f, 1.0f}},
-        {{ 0.5f,  0.5f, -0.5f}, {0.0f, 0.0f, -1.0f}, {0.0f, 1.0f}},
-
-        // Left face (-X)
-        {{-0.5f, -0.5f, -0.5f}, {-1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-        {{-0.5f, -0.5f,  0.5f}, {-1.0f, 0.0f, 0.0f}, {1.0f, 0.0f}},
-        {{-0.5f,  0.5f,  0.5f}, {-1.0f, 0.0f, 0.0f}, {1.0f, 1.0f}},
-        {{-0.5f,  0.5f, -0.5f}, {-1.0f, 0.0f, 0.0f}, {0.0f, 1.0f}},
-
-        // Right face (+X)
-        {{ 0.5f, -0.5f,  0.5f}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
-        {{ 0.5f, -0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}, {1.0f, 0.0f}},
-        {{ 0.5f,  0.5f, -0.5f}, {1.0f, 0.0f, 0.0f}, {1.0f, 1.0f}},
-        {{ 0.5f,  0.5f,  0.5f}, {1.0f, 0.0f, 0.0f}, {0.0f, 1.0f}},
-
-        // Top face (+Y)
-        {{-0.5f,  0.5f,  0.5f}, {0.0f, 1.0f, 0.0f}, {0.0f, 0.0f}},
-        {{ 0.5f,  0.5f,  0.5f}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
-        {{ 0.5f,  0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}, {1.0f, 1.0f}},
-        {{-0.5f,  0.5f, -0.5f}, {0.0f, 1.0f, 0.0f}, {0.0f, 1.0f}},
-
-        // Bottom face (-Y)
-        {{-0.5f, -0.5f, -0.5f}, {0.0f, -1.0f, 0.0f}, {0.0f, 0.0f}},
-        {{ 0.5f, -0.5f, -0.5f}, {0.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
-        {{ 0.5f, -0.5f,  0.5f}, {0.0f, -1.0f, 0.0f}, {1.0f, 1.0f}},
-        {{-0.5f, -0.5f,  0.5f}, {0.0f, -1.0f, 0.0f}, {0.0f, 1.0f}}
-    };
-
     inline std::vector<unsigned short> cube_indices = {
         0, 1, 2, 2, 3, 0,         // Front
         4, 5, 6, 6, 7, 4,         // Back
@@ -70,9 +13,50 @@ namespace Neonix
        20,21,22,22,23,20          // Bottom
     };
 
-    inline Mesh create_cube()
+    inline Mesh create_cube(float width = 1.0f, float height = 1.0f, float depth = 1.0f)
     {
-        return Mesh(cube_vertices, cube_indices);
+        float w = width * 0.5f;
+        float h = height * 0.5f;
+        float d = depth * 0.5f;
+
+        std::vector<Vertex> vertices = {
+            // Front face (+Z)
+            {{-w, -h,  d}, {0.0f, 0.0f, 1.0f}, {0.0f, 0.0f}},
+            {{ w, -h,  d}, {0.0f, 0.0f, 1.0f}, {1.0f, 0.0f}},
+            {{ w,  h,  d}, {0.0f, 0.0f, 1.0f}, {1.0f, 1.0f}},
+            {{-w,  h,  d}, {0.0f, 0.0f, 1.0f}, {0.0f, 1.0f}},
+
+            // Back face (-Z)
+            {{ w, -h, -d}, {0.0f, 0.0f, -1.0f}, {0.0f, 0.0f}},
+            {{-w, -h, -d}, {0.0f, 0.0f, -1.0f}, {1.0f, 0.0f}},
+            {{-w,  h, -d}, {0.0f, 0.0f, -1.0f}, {1.0f, 1.0f}},
+            {{ w,  h, -d}, {0.0f, 0.0f, -1.0f}, {0.0f, 1.0f}},
+
+            // Left face (-X)
+            {{-w, -h, -d}, {-1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
+            {{-w, -h,  d}, {-1.0f, 0.0f, 0.0f}, {1.0f, 0.0f}},
+            {{-w,  h,  d}, {-1.0f, 0.0f, 0.0f}, {1.0f, 1.0f}},
+            {{-w,  h, -d}, {-1.0f, 0.0f, 0.0f}, {0.0f, 1.0f}},
+
+            // Right face (+X)
+            {{ w, -h,  d}, {1.0f, 0.0f, 0.0f}, {0.0f, 0.0f}},
+            {{ w, -h, -d}, {1.0f, 0.0f, 0.0f}, {1.0f, 0.0f}},
+            {{ w,  h, -d}, {1.0f, 0.0f, 0.0f}, {1.0f, 1.0f}},
+            {{ w,  h,  d}, {1.0f, 0.0f, 0.0f}, {0.0f, 1.0f}},
+
+            // Top face (+Y)
+            {{-w,  h,  d}, {0.0f, 1.0f, 0.0f}, {0.0f, 0.0f}},
+            {{ w,  h,  d}, {0.0f, 1.0f, 0.0f}, {1.0f, 0.0f}},
+            {{ w,  h, -d}, {0.0f, 1.0f, 0.0f}, {1.0f, 1.0f}},
+            {{-w,  h, -d}, {0.0f, 1.0f, 0.0f}, {0.0f, 1.0f}},
+
+            // Bottom face (-Y)
+            {{-w, -h, -d}, {0.0f, -1.0f, 0.0f}, {0.0f, 0.0f}},
+            {{ w, -h, -d}, {0.0f, -1.0f, 0.0f}, {1.0f, 0.0f}},
+            {{ w, -h,  d}, {0.0f, -1.0f, 0.0f}, {1.0f, 1.0f}},
+            {{-w, -h,  d}, {0.0f, -1.0f, 0.0f}, {0.0f, 1.0f}}
+        };
+        return Mesh(vertices, cube_indices);
     }
 
     inline Mesh create_plane(float width = 1.0f, float depth = 1.0f, unsigned int segX = 1, unsigned int segZ = 1)

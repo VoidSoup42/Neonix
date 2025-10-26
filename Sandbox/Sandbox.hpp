@@ -16,5 +16,8 @@ private:
     CameraController m_cameraController;
 
     Neonix::Mesh m_plane;
-    Neonix::Mesh m_sphere;
+
+    Neonix::Mesh m_cube01;
+    Neonix::Mesh m_cube02;
+    Neonix::Mesh m_cube03;
 };
