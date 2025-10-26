@@ -92,9 +92,9 @@ namespace Neonix
                 float tx = static_cast<float>(x) / static_cast<float>(segX);
                 float posX = (tx - 0.5f) * width;
                 vertices.push_back({
-                    { posX, 0.0f, posZ },    // position (XZ plane, y = 0)
-                    { 0.0f, 1.0f, 0.0f },    // normal (up)
-                    { tx, tz }               // uv
+                    { posX, 0.0f, posZ },        // position
+                    { 0.0f, 1.0f, 0.0f },        // normal
+                    { tx * width, tz * depth }   // uv
                 });
             }
         }
@@ -113,6 +113,60 @@ namespace Neonix
                 indices.push_back(static_cast<unsigned short>(i3));
                 indices.push_back(static_cast<unsigned short>(i1));
                 indices.push_back(static_cast<unsigned short>(i0));
+            }
+        }
+
+        return Mesh(vertices, indices);
+    }
+
+    inline Mesh create_sphere(float radius = 1.0f, unsigned int segments = 32)
+    {
+        std::vector<Vertex> vertices;
+        std::vector<unsigned short> indices;
+
+        // Calculate vertices
+        for (unsigned int y = 0; y <= segments; ++y) {
+            float phi = static_cast<float>(M_PI) * static_cast<float>(y) / static_cast<float>(segments);
+            float sinPhi = std::sin(phi);
+            float cosPhi = std::cos(phi);
+
+            for (unsigned int x = 0; x <= segments; ++x) {
+                float theta = 2.0f * static_cast<float>(M_PI) * static_cast<float>(x) / static_cast<float>(segments);
+                float sinTheta = std::sin(theta);
+                float cosTheta = std::cos(theta);
+
+                float px = radius * sinPhi * cosTheta;
+                float py = radius * cosPhi;
+                float pz = radius * sinPhi * sinTheta;
+
+                // Normal is just the normalized position for a sphere
+                float nx = sinPhi * cosTheta;
+                float ny = cosPhi;
+                float nz = sinPhi * sinTheta;
+
+                // UV coordinates
+                float u = static_cast<float>(x) / static_cast<float>(segments);
+                float v = static_cast<float>(y) / static_cast<float>(segments);
+
+                vertices.push_back({{px, py, pz}, {nx, ny, nz}, {u, v}});
+            }
+        }
+
+        // Calculate indices
+        for (unsigned int y = 0; y < segments; ++y) {
+            for (unsigned int x = 0; x < segments; ++x) {
+                unsigned int current = y * (segments + 1) + x;
+                unsigned int next = current + 1;
+                unsigned int bottom = current + (segments + 1);
+                unsigned int bottomNext = bottom + 1;
+
+                indices.push_back(static_cast<unsigned short>(current));
+                indices.push_back(static_cast<unsigned short>(bottom));
+                indices.push_back(static_cast<unsigned short>(next));
+
+                indices.push_back(static_cast<unsigned short>(next));
+                indices.push_back(static_cast<unsigned short>(bottom));
+                indices.push_back(static_cast<unsigned short>(bottomNext));
             }
         }
 
