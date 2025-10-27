@@ -25,6 +25,7 @@ Neonix is a simple C++ game and rendering engine built with OpenGL. It’s desig
 - C++ Compiler clang or g++
 - glew
 - glfw
+- glm
 
 ### Build Instructions
 
@@ -46,6 +47,7 @@ cd Sandbox && ./Sandbox
 ## Dependencies
 - GLFW: Window and input management
 - GLEW: for using modern OpenGL
+- GLM: for maths
 - STB Image: Image loading library
 
 ## License
