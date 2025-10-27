@@ -4,8 +4,8 @@ namespace Neonix
 {
     Material::Material()
         : m_shader(
-              "/home/sam/Documents/dev/Neonix/Resources/Shaders/SimpleShader.vert",
-              "/home/sam/Documents/dev/Neonix/Resources/Shaders/SimpleShader.frag")
+              "../../Resources/Shaders/SimpleShader.vert",
+              "../../Resources/Shaders/SimpleShader.frag")
     {
     }
 
