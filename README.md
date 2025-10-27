@@ -40,7 +40,7 @@ make -j
 
 After building, you can run the sandbox application:
 ```bash
-./Sandbox/Sandbox
+cd Sandbox && ./Sandbox
 ```
 
 ## Dependencies
