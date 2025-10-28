@@ -17,6 +17,7 @@ namespace Neonix
         void Update();
         bool ShouldClose();
 
+        inline GLFWwindow* GetGLFWWindow() const { return m_window; }
         inline uint32_t GetWidth() const { return m_width; }
         inline uint32_t GetHeight() const { return m_height; }
 

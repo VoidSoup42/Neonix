@@ -25,12 +25,22 @@ add_library(Neonix SHARED
     Graphics/Camera.cpp
     Graphics/Camera.hpp
 
-    ${CMAKE_SOURCE_DIR}/Vendor/stb/stb_image_loader.cpp    # stb
+    # stb
+    ${CMAKE_SOURCE_DIR}/Vendor/stb/stb_image_loader.cpp
+
+    # ImGu
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/imgui.cpp
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/imgui_demo.cpp
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/imgui_draw.cpp
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/imgui_widgets.cpp
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/imgui_tables.cpp
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/backends/imgui_impl_glfw.cpp
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/backends/imgui_impl_opengl3.cpp
 )
 
 include_directories(
     ${CMAKE_SOURCE_DIR}/Vendor/stb/
-    ${CMAKE_SOURCE_DIR}/Vendor/OBJ-Loader/
+    ${CMAKE_SOURCE_DIR}/Vendor/imgui/
 )
 
 target_link_libraries(Neonix PUBLIC glfw GLEW OpenGL)

@@ -7,5 +7,6 @@ namespace Neonix
     public:
         virtual ~Layer() {};
         virtual void OnUpdate(float& deltaTime) {};
+        virtual void OnImGuiRender() {};
     };
 }
