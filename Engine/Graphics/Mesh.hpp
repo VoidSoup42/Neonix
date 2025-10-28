@@ -16,7 +16,7 @@ namespace Neonix
     class Mesh
     {
     public:
-        Mesh(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices);
+        Mesh(std::vector<Vertex>& vertices, std::vector<uint32_t>& indices);
         ~Mesh();
 
         void SetMaterial(const Material& material);

@@ -30,7 +30,7 @@ namespace Neonix
             shader.SetUniformMat4("u_model", obj->GetModelMatrix());
 
             glBindVertexArray(obj->GetVertexArray());
-            glDrawElements(GL_TRIANGLES, obj->GetIndicesCount(), GL_UNSIGNED_SHORT, nullptr);
+            glDrawElements(GL_TRIANGLES, obj->GetIndicesCount(), GL_UNSIGNED_INT, nullptr);
 
             m_renderQueue.pop_front();
         }

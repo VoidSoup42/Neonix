@@ -4,7 +4,7 @@
 
 namespace Neonix
 {
-    inline std::vector<unsigned short> cube_indices = {
+    inline std::vector<uint32_t> cube_indices = {
         0, 1, 2, 2, 3, 0,         // Front
         4, 5, 6, 6, 7, 4,         // Back
         8, 9,10,10,11, 8,         // Left
@@ -62,7 +62,7 @@ namespace Neonix
     inline Mesh create_plane(float width = 1.0f, float depth = 1.0f, unsigned int segX = 1, unsigned int segZ = 1)
     {
         std::vector<Vertex> vertices;
-        std::vector<unsigned short> indices;
+        std::vector<uint32_t> indices;
 
         const unsigned int cols = segX + 1;
         const unsigned int rows = segZ + 1;
@@ -90,13 +90,13 @@ namespace Neonix
                 unsigned int i2 = i0 + cols;
                 unsigned int i3 = i2 + 1;
 
-                indices.push_back(static_cast<unsigned short>(i0));
-                indices.push_back(static_cast<unsigned short>(i2));
-                indices.push_back(static_cast<unsigned short>(i3));
+                indices.push_back(static_cast<uint32_t>(i0));
+                indices.push_back(static_cast<uint32_t>(i2));
+                indices.push_back(static_cast<uint32_t>(i3));
 
-                indices.push_back(static_cast<unsigned short>(i3));
-                indices.push_back(static_cast<unsigned short>(i1));
-                indices.push_back(static_cast<unsigned short>(i0));
+                indices.push_back(static_cast<uint32_t>(i3));
+                indices.push_back(static_cast<uint32_t>(i1));
+                indices.push_back(static_cast<uint32_t>(i0));
             }
         }
 
@@ -106,7 +106,7 @@ namespace Neonix
     inline Mesh create_sphere(float radius = 1.0f, unsigned int segments = 32)
     {
         std::vector<Vertex> vertices;
-        std::vector<unsigned short> indices;
+        std::vector<uint32_t> indices;
 
         // Calculate vertices
         for (unsigned int y = 0; y <= segments; ++y) {
@@ -144,13 +144,13 @@ namespace Neonix
                 unsigned int bottom = current + (segments + 1);
                 unsigned int bottomNext = bottom + 1;
 
-                indices.push_back(static_cast<unsigned short>(current));
-                indices.push_back(static_cast<unsigned short>(bottom));
-                indices.push_back(static_cast<unsigned short>(next));
+                indices.push_back(static_cast<uint32_t>(current));
+                indices.push_back(static_cast<uint32_t>(bottom));
+                indices.push_back(static_cast<uint32_t>(next));
 
-                indices.push_back(static_cast<unsigned short>(next));
-                indices.push_back(static_cast<unsigned short>(bottom));
-                indices.push_back(static_cast<unsigned short>(bottomNext));
+                indices.push_back(static_cast<uint32_t>(next));
+                indices.push_back(static_cast<uint32_t>(bottom));
+                indices.push_back(static_cast<uint32_t>(bottomNext));
             }
         }
 

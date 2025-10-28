@@ -4,7 +4,7 @@
 
 namespace Neonix
 {
-    Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<unsigned short>& indices)
+    Mesh::Mesh(std::vector<Vertex>& vertices, std::vector<uint32_t>& indices)
         : m_indicesCount(indices.size()),
           m_modelMatrix(1.0f)
     {
@@ -29,7 +29,7 @@ namespace Neonix
 
         glGenBuffers(1, &m_indexBuffer);
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_indexBuffer);
-        glNamedBufferData(m_indexBuffer, indices.size() * sizeof(unsigned short), indices.data(), GL_STATIC_DRAW);
+        glNamedBufferData(m_indexBuffer, indices.size() * sizeof(uint32_t), indices.data(), GL_STATIC_DRAW);
 
         glBindVertexArray(0);
     }
