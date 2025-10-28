@@ -8,6 +8,7 @@ class Sandbox : public Neonix::Layer
 public:
     Sandbox();
     void OnUpdate(float& deltaTime) override;
+    void OnImGuiRender() override;
 
 private:
     Neonix::Application* m_appInstance;

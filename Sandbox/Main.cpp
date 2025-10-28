@@ -7,7 +7,7 @@ int main()
     appProps.title = "My App";
     appProps.windowSizeX = 1600;
     appProps.windowSizeY = 900;
-    appProps.vSync = true;
+    appProps.vSync = false;
 
     Neonix::Application app(appProps);
     app.PushLayer<Sandbox>();

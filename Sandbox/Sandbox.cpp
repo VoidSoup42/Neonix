@@ -39,3 +39,18 @@ void Sandbox::OnUpdate(float& deltaTime)
     m_renderer.Submit(m_cube03);
     m_renderer.Render(m_camera);
 }
+
+void Sandbox::OnImGuiRender()
+{
+    ImGui::SetNextWindowBgAlpha(0.35f); // semi-transparent background
+    ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDecoration |
+                                    ImGuiWindowFlags_AlwaysAutoResize |
+                                    ImGuiWindowFlags_NoSavedSettings |
+                                    ImGuiWindowFlags_NoFocusOnAppearing |
+                                    ImGuiWindowFlags_NoNav;
+    ImGui::SetNextWindowPos(ImVec2(10, 10));
+
+    ImGui::Begin("Overlay", nullptr, window_flags);
+    ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
+    ImGui::End();
+}
