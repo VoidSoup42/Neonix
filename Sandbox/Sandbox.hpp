@@ -15,6 +15,7 @@ private:
     Neonix::Renderer m_renderer;
     Neonix::Camera m_camera;
     CameraController m_cameraController;
+    float m_clearColor[3];
 
     Neonix::Mesh m_plane;
 

@@ -20,6 +20,9 @@ namespace Neonix
         io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
         io.ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 
+        ImGui::StyleColorsLight();
+        io.Fonts->AddFontFromFileTTF("../../Resources/Fonts/NotoSans-Regular.ttf");
+
         // Setup Platform/Renderer backends
         ImGui_ImplGlfw_InitForOpenGL(m_window->GetGLFWWindow(), true);
         ImGui_ImplOpenGL3_Init();
