@@ -15,9 +15,9 @@ Sandbox::Sandbox()
     planeMaterial.albedo = std::make_shared<Neonix::Texture>("../../Resources/Textures/kenney_prototype-textures/PNG/Purple/texture_09.png");
     m_plane.SetMaterial(planeMaterial);
 
-    m_cube01.Translate({-2.0f, 0.5f, -2.0f});
-    m_cube02.Translate({2.0f, 0.5f, 1.0f});
-    m_cube03.Translate({-2.0f, 0.5f, 2.0f});
+    m_cube01.Translate({-4.0f, 1.0f, -4.0f});
+    m_cube02.Translate({ 4.0f, 1.0f, 2.0f});
+    m_cube03.Translate({-4.0f, 1.0f, 4.0f});
     m_cube01.Scale({2.0f, 2.0f, 2.0f});
     m_cube02.Scale({2.0f, 2.0f, 2.0f});
     m_cube03.Scale({2.0f, 2.0f, 2.0f});

@@ -2,7 +2,7 @@
 
 CameraController::CameraController(Neonix::Camera *camera, float moveSpeed, float sensitivity)
     : m_camera(camera), m_moveSpeed(moveSpeed), m_sensitivity(sensitivity),
-      m_position(0.0f, 0.5f, 3.0f), m_rotation(0.0f, 270.0f), m_velocity(0.0f),
+      m_position(0.0f, 1.0f, 3.0f), m_rotation(0.0f, 270.0f), m_velocity(0.0f),
       m_firstMouse(true), m_lastX(0.0), m_lastY(0.0), m_smoothTime(0.1f)
 {
     UpdateCamera();
