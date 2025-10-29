@@ -1,7 +1,7 @@
 #include "Sandbox.hpp"
 
 Sandbox::Sandbox()
-    : m_plane(Neonix::create_plane(15.0f, 15.0f, 1, 1)),
+    : m_plane(Neonix::create_plane(30.0f, 30.0f, 1, 1)),
       m_camera(80.0f, (float)16/9, 0.1f, 100.0f),
       m_cameraController(&m_camera),
       m_cube01(Neonix::create_cube()),
@@ -12,17 +12,20 @@ Sandbox::Sandbox()
     m_appInstance = Neonix::Application::GetInstance();
     
     Neonix::Material planeMaterial;
-    planeMaterial.uvScaleX = 2.0f;
-    planeMaterial.uvScaleY = 2.0f;
-    planeMaterial.albedo = std::make_shared<Neonix::Texture>("../../Resources/Textures/kenney_prototype-textures/PNG/Green/texture_09.png");
+    planeMaterial.albedo = std::make_shared<Neonix::Texture>("../../Resources/Textures/kenney_prototype-textures/PNG/Purple/texture_09.png");
     m_plane.SetMaterial(planeMaterial);
 
     m_cube01.Translate({-2.0f, 0.5f, -2.0f});
     m_cube02.Translate({2.0f, 0.5f, 1.0f});
     m_cube03.Translate({-2.0f, 0.5f, 2.0f});
+    m_cube01.Scale({2.0f, 2.0f, 2.0f});
+    m_cube02.Scale({2.0f, 2.0f, 2.0f});
+    m_cube03.Scale({2.0f, 2.0f, 2.0f});
 
     Neonix::Material gridMaterial;
-    gridMaterial.albedo = std::make_shared<Neonix::Texture>("../../Resources/Textures/kenney_prototype-textures/PNG/Purple/texture_01.png");
+    gridMaterial.uvScaleX = 2.0f;
+    gridMaterial.uvScaleY = 2.0f;
+    gridMaterial.albedo = std::make_shared<Neonix::Texture>("../../Resources/Textures/kenney_prototype-textures/PNG/Green/texture_01.png");
 
     m_cube01.SetMaterial(gridMaterial);
     m_cube02.SetMaterial(gridMaterial);

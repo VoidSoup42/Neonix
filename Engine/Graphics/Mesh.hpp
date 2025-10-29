@@ -24,6 +24,7 @@ namespace Neonix
 
         void Translate(const glm::vec3& pos);
         void Rotate(const glm::vec3& eulerAngles);
+        void Scale(const glm::vec3& scale);
 
         inline uint32_t GetVertexArray() const { return m_vertexArray; }
         inline uint32_t GetIndicesCount() const { return m_indicesCount; }
@@ -34,7 +35,7 @@ namespace Neonix
         uint32_t m_vertexArray = 0;
         uint32_t m_vertexBuffer = 0;
         uint32_t m_indexBuffer = 0;
-        uint32_t m_indicesCount;
+        uint32_t m_indicesCount = 0;
         
         glm::mat4 m_modelMatrix;
         std::unique_ptr<Material> m_material;

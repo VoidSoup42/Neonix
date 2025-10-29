@@ -53,6 +53,11 @@ namespace Neonix
         m_modelMatrix = glm::rotate(m_modelMatrix, eulerAngles.z, glm::vec3(0, 0, 1));
     }
 
+    void Mesh::Scale(const glm::vec3& scale)
+    {
+        m_modelMatrix = glm::scale(m_modelMatrix, scale);
+    }
+
     void Mesh::SetMaterial(const Material& material)
     {
         m_hasMaterial = true;
